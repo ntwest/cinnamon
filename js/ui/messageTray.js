@@ -181,6 +181,9 @@ URLHighlighter.prototype = {
     _highlightUrls: function () {
         // text here contain markup
         let urls = Util.findUrls(this._text);
+        if (!urls.length)
+            return;
+
         let markup = '';
         let pos = 0;
         for (let i = 0; i < urls.length; i++) {
